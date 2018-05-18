@@ -1,5 +1,4 @@
 module HashExtension
-	class Hash
 	  def method_missing(method, *params)
 	    method_string = method.to_s
 	    if method_string.last == "="
@@ -8,5 +7,6 @@ module HashExtension
 	      self[method_string]
 	    end
 	  end
-	end
 end
+
+Hash.include HashExtension
